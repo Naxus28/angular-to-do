@@ -44,15 +44,18 @@ gulp.task('sass', () => {
  * inject
  */
 gulp.task('inject', ['sass'], () => {
-  let jsSource = gulp.src(config.srcFiles.js, { read: false });
   let cssSource = gulp.src(path.join(config.dirPaths.temp, 'styles', config.fileTypesForBuilds.dev.css), { read: false });
   let targetHtml = path.join(config.dirPaths.temp, 'index.html');
 
   return gulp.src(targetHtml)
-    .pipe(plugins.inject(jsSource, config.jsInjectOptions))
+    .pipe(plugins.inject(
+      gulp.src(config.srcFiles.js).pipe(plugins.angularFilesort()),
+      config.jsInjectOptions
+    ))
     .pipe(plugins.inject(cssSource, config.cssInjectOptions))
     .pipe(gulp.dest(config.dirPaths.temp));
 }); 
+
 
 /*
  * lint js

@@ -13,9 +13,9 @@
   <body>
     
     <div class="wrapper">
-      <ui-view> 
+      <div ui-view>
         <!-- states load here --> 
-      </ui-view>
+      </div>
     </div>
     <!-- bower:js -->
     <script src="angular/angular.js"></script>
@@ -24,10 +24,10 @@
     <!-- endbower -->
 
     <!-- inject:js -->
-    <script src="app/app.config.js"></script>
-    <script src="app/app.controller.js"></script>
-    <script src="app/app.module.js"></script>
     <script src="directives/circle-progress.directive.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/app.config.js"></script>
     <!-- endinject -->
   </body>
 </html>
