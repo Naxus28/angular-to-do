@@ -3,17 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <title>Angular to-do app</title>
-    <!-- inject:css -->
-    <!-- endinject -->
-    
     <!-- bower:css -->
     <!-- endbower -->
+    
+    <!-- inject:css -->
+    <!-- endinject -->
   </head>
   <body>
-    <!-- inject:js -->
-    <!-- endinject -->
-
+    
+    <div class="wrapper">
+      <ui-view> 
+        <!-- states load here --> 
+      </ui-view>
+    </div>
     <!-- bower:js -->
     <!-- endbower -->
+
+    <!-- inject:js -->
+    <!-- endinject -->
   </body>
 </html>

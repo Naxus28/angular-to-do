@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('')
+    .module('todoApp')
     .config(config);
 
   /* @ngInject */

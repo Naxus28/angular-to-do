@@ -12,7 +12,7 @@ const dirPaths = {
  * paths to source files
  */
 const srcFiles = {
-  html: path.join(dirPaths.src, '/**/**/*.html'),
+  html: path.join(dirPaths.src, '/**/*.html'),
   sass: path.join(dirPaths.src, '/styles/**/*.scss'),
   js: path.join(dirPaths.src, '/**/*.js')
 };
@@ -42,8 +42,8 @@ let notifyConfig = (fileType) => {
 /*
  * options obj for inject  
  */
-let injectOptions = { addRootSlash: false, ignorePath: dirPaths.temp, relative: true };
-
+let cssInjectOptions = { addRootSlash: false, ignorePath: dirPaths.temp, relative: true };
+let jsInjectOptions = { addRootSlash: false, ignorePath: 'src/', relative: false };
 
 /*
  * auto-prefixer for sass task
@@ -56,7 +56,7 @@ let sassAutoprefixerConfig = { browsers: ['last 2 versions'], cascade: false };
 let wiredepConfig = {
   json: require('./bower.json'),
   directory: './bower_components',
-  ignorePath: '../..'
+  ignorePath: '../bower_components/'
 };
 
 /*
@@ -66,7 +66,8 @@ export default {
   dirPaths,
   fileTypesForBuilds,
   notifyConfig,
-  injectOptions,
+  cssInjectOptions,
+  jsInjectOptions,
   sassAutoprefixerConfig,
   srcFiles,
   wiredepConfig

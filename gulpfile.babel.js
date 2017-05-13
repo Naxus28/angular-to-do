@@ -49,8 +49,8 @@ gulp.task('inject', ['sass'], () => {
   let targetHtml = path.join(config.dirPaths.temp, 'index.html');
 
   return gulp.src(targetHtml)
-    .pipe(plugins.inject(jsSource, config.injectOptions))
-    .pipe(plugins.inject(cssSource, config.injectOptions))
+    .pipe(plugins.inject(jsSource, config.jsInjectOptions))
+    .pipe(plugins.inject(cssSource, config.cssInjectOptions))
     .pipe(gulp.dest(config.dirPaths.temp));
 }); 
 
@@ -90,8 +90,9 @@ gulp.task('reload', () => browserSync.reload());
  * server config and task
  */
 const devServers = [
-  config.dirPaths.src, 
-  config.dirPaths.temp
+  'bower_components',
+  config.dirPaths.temp,
+  config.dirPaths.src
 ];
 
 let browserSyncInit = (devServers) => {
