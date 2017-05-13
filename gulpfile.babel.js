@@ -27,6 +27,14 @@ gulp.task('clean-temp', () => {
   return del.sync(dir);
 });
 
+
+/*
+ * copy-index-html
+ */
+gulp.task('copy-index-html', () => {
+  return gulp.src('src/index.html')
+    .pipe(gulp.dest(config.dirPaths.temp));
+});
 /*
  * sass
  */
@@ -56,7 +64,6 @@ gulp.task('inject', ['sass'], () => {
     .pipe(gulp.dest(config.dirPaths.temp));
 }); 
 
-
 /*
  * lint js
  */
@@ -79,7 +86,8 @@ gulp.task('wiredep', function () {
  * watch
  */
 gulp.task('watch', () => {
-  gulp.watch(config.srcFiles.html, () => runSequence('inject', 'reload'));
+  gulp.watch('src/index.html', () => runSequence('copy-index-html', 'sass', 'wiredep', 'inject', 'reload'));
+  gulp.watch(config.srcFiles.html, () => runSequence('reload'));
   gulp.watch(config.srcFiles.sass, () => runSequence('sass', 'inject', 'reload'));
   gulp.watch(config.srcFiles.js, () => runSequence('lint', 'inject', 'reload'));
 });
@@ -93,7 +101,7 @@ gulp.task('reload', () => browserSync.reload());
  * server config and task
  */
 const devServers = [
-  'bower_components',
+  config.dirPaths.bower,
   config.dirPaths.temp,
   config.dirPaths.src
 ];

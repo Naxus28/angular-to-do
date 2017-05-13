@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/"/>
     <meta charset="UTF-8">
     <title>Angular to-do app</title>
     <!-- bower:css -->
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <!-- endinject -->
   </head>
-  <body>
+  <body ng-app="todoApp">
     
     <div class="wrapper">
       <div ui-view>
@@ -24,10 +25,16 @@
     <!-- endbower -->
 
     <!-- inject:js -->
+    <script src="error/error.module.js"></script>
+    <script src="index.module.js"></script>
+    <script src="error/error.controller.js"></script>
+    <script src="error/error.config.route.js"></script>
     <script src="directives/circle-progress.directive.js"></script>
     <script src="app/app.module.js"></script>
     <script src="app/app.controller.js"></script>
-    <script src="app/app.config.js"></script>
+    <script src="app/app.config.route.js"></script>
+    <script src="index.config.route.js"></script>
+    <script src="index.config.js"></script>
     <!-- endinject -->
   </body>
 </html>

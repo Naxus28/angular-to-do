@@ -1,11 +1,12 @@
 const path = require('path');
 
 /*
- * paths to server directories
+ * paths to main/server directories
  */
 const dirPaths = {
   src: 'src',
-  temp: '.tmp'
+  temp: '.tmp',
+  bower: 'bower_components'
 };
 
 /*
@@ -23,7 +24,8 @@ const srcFiles = {
 const fileTypesForBuilds = {
   dev: {
     css: 'styles.css',
-    js: 'scripts.js'
+    js: 'scripts.js',
+    index: 'index.html'
   }
 };
 
