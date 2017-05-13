@@ -1,7 +1,7 @@
 const path = require('path');
 
 /*
- * paths to main directories
+ * paths to server directories
  */
 const dirPaths = {
   src: 'src',
@@ -12,12 +12,13 @@ const dirPaths = {
  * paths to source files
  */
 const srcFiles = {
+  html: path.join(dirPaths.src, '/**/**/*.html'),
   sass: path.join(dirPaths.src, '/styles/**/*.scss'),
   js: path.join(dirPaths.src, '/**/*.js')
 };
 
 /*
- * file extensions for different builds
+ * file extensions for build
  */
 const fileTypesForBuilds = {
   dev: {
@@ -39,10 +40,15 @@ let notifyConfig = (fileType) => {
 };
 
 /*
+ * options obj for inject  
+ */
+let injectOptions = { addRootSlash: false, ignorePath: dirPaths.temp, relative: true };
+
+
+/*
  * auto-prefixer for sass task
  */
 let sassAutoprefixerConfig = { browsers: ['last 2 versions'], cascade: false };
-
 
 /*
  * wiredep config obj
@@ -60,6 +66,7 @@ export default {
   dirPaths,
   fileTypesForBuilds,
   notifyConfig,
+  injectOptions,
   sassAutoprefixerConfig,
   srcFiles,
   wiredepConfig

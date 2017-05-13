@@ -44,16 +44,13 @@ gulp.task('sass', () => {
  * inject
  */
 gulp.task('inject', ['sass'], () => {
-  let injectOptions = { addRootSlash: false, ignorePath: config.dirPaths.temp, relative: true };
-  let cssFile = path.join(config.dirPaths.temp, 'styles', config.fileTypesForBuilds.dev.css);
-  
   let jsSource = gulp.src(config.srcFiles.js, { read: false });
-  let cssSource = gulp.src(cssFile, { read: false });
+  let cssSource = gulp.src(path.join(config.dirPaths.temp, 'styles', config.fileTypesForBuilds.dev.css), { read: false });
   let targetHtml = path.join(config.dirPaths.temp, 'index.html');
 
   return gulp.src(targetHtml)
-    .pipe(plugins.inject(jsSource, injectOptions))
-    .pipe(plugins.inject(cssSource, injectOptions))
+    .pipe(plugins.inject(jsSource, config.injectOptions))
+    .pipe(plugins.inject(cssSource, config.injectOptions))
     .pipe(gulp.dest(config.dirPaths.temp));
 }); 
 
@@ -78,29 +75,32 @@ gulp.task('wiredep', function () {
 /*
  * watch
  */
-// gulp.task('watch', () => {
-//   gulp.watch(config.srcFiles.htmlSrc, () => runSequence('html', 'inject', 'reload'));
-//   gulp.watch(config.srcFiles.sass, ['sass', 'reload']);
-//   gulp.watch(config.srcFiles.js, () => runSequence('lint', 'reload'));
-// });
+gulp.task('watch', () => {
+  gulp.watch(config.srcFiles.html, () => runSequence('inject', 'reload'));
+  gulp.watch(config.srcFiles.sass, () => runSequence('sass', 'inject', 'reload'));
+  gulp.watch(config.srcFiles.js, () => runSequence('lint', 'inject', 'reload'));
+});
 
 /*
  * reload servers
  */
 gulp.task('reload', () => browserSync.reload());
 
-
 /*
- * server
+ * server config and task
  */
-let browserSyncInit = (serverDirs) => {
+const devServers = [
+  config.dirPaths.src, 
+  config.dirPaths.temp
+];
+
+let browserSyncInit = (devServers) => {
   browserSync({
-    server: [...serverDirs]
+    server: [...devServers]
   });
 };
 
-// development server
-gulp.task('serve', ['build'], () => browserSyncInit([config.dirPaths.src, config.dirPaths.temp])); 
+gulp.task('serve', ['build', 'watch'], () => browserSyncInit(devServers)); 
 
 
 
