@@ -6,6 +6,6 @@
     .config(config);
 
   function config($urlRouterProvider) {
-    $urlRouterProvider.otherwise('/error');
+    $urlRouterProvider.otherwise('/404');
   }
 })();

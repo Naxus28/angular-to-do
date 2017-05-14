@@ -12,7 +12,8 @@ const browserSync = require('browser-sync'),
     path = require('path'),
     plugins = require('gulp-load-plugins')(),
     runSequence = require('run-sequence'),
-    wiredep = require('wiredep').stream;
+    wiredep = require('wiredep').stream,
+    spa = require('browser-sync-spa');
 
 /*
  * build
@@ -100,6 +101,12 @@ gulp.task('reload', () => browserSync.reload());
 /*
  * server config and task
  */
+ 
+browserSync.use(spa({
+  // Only needed for angular apps
+  selector: '[ng-app]'
+}));
+
 const devServers = [
   config.dirPaths.bower,
   config.dirPaths.temp,
@@ -108,7 +115,8 @@ const devServers = [
 
 let browserSyncInit = (devServers) => {
   browserSync({
-    server: [...devServers]
+    startPath: '/',
+    server: devServers
   });
 };
 
