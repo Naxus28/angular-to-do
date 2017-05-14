@@ -7,7 +7,6 @@
 
   /* @ngInject */
   function ErrorCtrl() {
-    console.log('hello from ErrorCtrl');
   }
 
 })();
