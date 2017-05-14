@@ -71,17 +71,19 @@ body {
   font-weight: 300; }
 
 h1 {
-  text-transform: uppercase;
-  font-size: 2.2em;
   padding: 10px;
   text-align: center;
+  text-transform: uppercase;
+  font-size: 2.2em;
+  font-weight: 500;
   color: white; }
 
 h2 {
-  font-size: 1.6em;
-  text-align: center;
   margin-top: 30px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 500; }
 
 p {
   font-size: 1.2em;
@@ -90,7 +92,7 @@ p {
 header {
   width: 100%;
   padding: 10px 0px;
-  background: #B2957C; }
+  background: #D4B193; }
 
 div.wrapper {
   min-height: 100%;
@@ -114,7 +116,7 @@ div.content {
 footer {
   width: 100%;
   padding: 10px 0px;
-  background: #B2957C; }
+  background: #D4B193; }
 
 footer p {
   color: white;
@@ -126,7 +128,7 @@ div.to-dos-wrapper {
   margin: 0px auto; }
 
 li.to-dos-wrapper__list-item {
-  background: #4C9FBA;
+  background: #7B99B0;
   padding: 12px;
   margin-bottom: 10px;
   border-radius: 5px;

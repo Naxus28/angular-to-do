@@ -8,7 +8,12 @@
     'ui.router',
 
     /**
-     * project modules
+     * directives
+     */
+    'directives',
+
+    /**
+     * main modules
      */
     'app',
     'error'
