@@ -5,12 +5,14 @@
     .module('app')
     .config(config);
 
-  function config($stateProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/app.html',
-        controller: 'AppController as app'
-      });
+  function config($stateProvider, $urlRouterProvider) {
+    let appState = {
+      name: 'home',
+      url: '/home',
+      templateUrl: 'app/app.html',
+      controller: 'AppCtrl as app'
+    };
+
+    $stateProvider.state(appState);
   }
 })();

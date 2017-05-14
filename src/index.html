@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <base href="/"/>
+    <base href="/">
     <meta charset="UTF-8">
     <title>Angular to-do app</title>
     <!-- bower:css -->
@@ -13,6 +13,8 @@
   <body ng-app="todoApp">
     
     <div class="wrapper">
+    <a ui-sref="home" ui-sref-active="active">Home</a>
+    <a ui-sref="error" ui-sref-active="active">Error</a>
       <div ui-view>
         <!-- states load here --> 
       </div>

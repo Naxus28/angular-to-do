@@ -6,11 +6,13 @@
     .config(config);
 
   function config($stateProvider) {
-    $stateProvider
-      .state('error', {
-        url: '/error',
-        templateUrl: 'error/error.html',
-        controller: 'ErrorController as error'
-      });
+    let errorState = {
+      name: 'error',
+      url: '/404',
+      templateUrl: 'error/error.html',
+      controller: 'ErrorCtrl as error'
+    };
+
+    $stateProvider.state(errorState);
   }
 })();

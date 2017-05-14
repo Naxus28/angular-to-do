@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <base href="/"/>
+    <base href="/">
     <meta charset="UTF-8">
     <title>Angular to-do app</title>
     <!-- bower:css -->
@@ -14,6 +14,8 @@
   <body ng-app="todoApp">
     
     <div class="wrapper">
+    <a ui-sref="home" ui-sref-active="active">Home</a>
+    <a ui-sref="error" ui-sref-active="active">Error</a>
       <div ui-view>
         <!-- states load here --> 
       </div>
@@ -26,13 +28,13 @@
 
     <!-- inject:js -->
     <script src="error/error.module.js"></script>
-    <script src="index.module.js"></script>
     <script src="error/error.controller.js"></script>
     <script src="error/error.config.route.js"></script>
     <script src="directives/circle-progress.directive.js"></script>
     <script src="app/app.module.js"></script>
     <script src="app/app.controller.js"></script>
     <script src="app/app.config.route.js"></script>
+    <script src="index.module.js"></script>
     <script src="index.config.route.js"></script>
     <script src="index.config.js"></script>
     <!-- endinject -->

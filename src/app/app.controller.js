@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('todoApp')
-    .controller('AppController', AppController);
+    .module('app')
+    .controller('AppCtrl', AppCtrl);
 
   /* @ngInject */
-  function AppController() {
+  function AppCtrl() {
     console.log('hello from controller');
   }
 

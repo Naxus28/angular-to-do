@@ -93,7 +93,7 @@ gulp.task('watch', () => {
 });
 
 /*
- * reload servers
+ * reload server
  */
 gulp.task('reload', () => browserSync.reload());
 

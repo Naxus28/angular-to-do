@@ -2,12 +2,12 @@
   'use strict';
 
   angular
-    .module('todoApp')
-    .controller('ErrorController', ErrorController);
+    .module('error')
+    .controller('ErrorCtrl', ErrorCtrl);
 
   /* @ngInject */
-  function ErrorController() {
-    console.log('hello from ErrorController');
+  function ErrorCtrl() {
+    console.log('hello from ErrorCtrl');
   }
 
 })();
