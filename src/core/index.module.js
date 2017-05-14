@@ -3,14 +3,14 @@
   
   angular.module('todoApp', [
     /**
+     * external libraries
+     */
+    'ui.router',
+
+    /**
      * project modules
      */
     'app',
-    'error',
-
-    /**
-     * external libraries
-     */
-    'ui.router'
+    'error'
   ]);
 })();
