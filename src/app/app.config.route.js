@@ -5,10 +5,10 @@
     .module('app')
     .config(config);
 
-  function config($stateProvider, $urlRouterProvider) {
+  function config($stateProvider) {
     let appState = {
       name: 'home',
-      url: '/home',
+      url: '/',
       templateUrl: 'app/app.html',
       controller: 'AppCtrl as app'
     };

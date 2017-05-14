@@ -8,7 +8,7 @@
   function config($stateProvider) {
     let errorState = {
       name: 'error',
-      url: '/404',
+      url: '/error',
       templateUrl: 'error/error.html',
       controller: 'ErrorCtrl as error'
     };
