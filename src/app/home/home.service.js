@@ -5,16 +5,26 @@
     .factory('todoService', todoService);
 
   function todoService($http) {
-    const service = { getTodos };
+    const gradientColors = ['green', 'blue'];
+    const service = { 
+      getTodos,
+      gradientColors
+    };
 
     return service;
 
     ///////////////////
     function getTodos() {
       const url = 'app/home/todos.json';
-      const requestObj = { method: 'GET', url: url };
+      const requestObj = { 
+        method: 'GET', 
+        url: url,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      };
       
-      return $http(requestObj).then(data => data, err => err);
+      return $http(requestObj);
     }
   }
 })();
