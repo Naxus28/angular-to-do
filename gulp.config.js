@@ -1,7 +1,10 @@
+/*
+ * plugins
+ */
 const path = require('path');
 
 /*
- * paths to main/server directories
+ * paths to server directories
  */
 const dirPaths = {
   src: 'src',
@@ -30,7 +33,7 @@ const fileTypesForBuilds = {
 };
 
 /*
- * notify plugin config--error handler
+ * notify plugin config
  */
 let notifyConfig = (fileType) => {
   let config = {
@@ -42,7 +45,7 @@ let notifyConfig = (fileType) => {
 };
 
 /*
- * options obj for inject  
+ * options obj for inject task
  */
 let cssInjectOptions = { addRootSlash: false, ignorePath: dirPaths.temp, relative: true };
 let jsInjectOptions = { addRootSlash: false, ignorePath: 'src/', relative: false };

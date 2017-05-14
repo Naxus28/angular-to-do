@@ -1,6 +1,10 @@
 div.to-dos-wrapper {
-  width: 60%;
-  margin: 0px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+div.to-dos-wrapper__to-dos,
+div.to-dos-wrapper__progress-circle {
+  flex: 50%;
 }
 li.to-dos-wrapper__list-item {
   background: $bali-hai;

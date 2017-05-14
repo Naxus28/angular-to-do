@@ -26,5 +26,8 @@
   "resolutions": {
     "angular": "^1.6.4",
     "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "jquery-circle-progress": "^1.2.2"
   }
 }

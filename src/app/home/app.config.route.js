@@ -9,7 +9,7 @@
     let appState = {
       name: 'home',
       url: '/',
-      templateUrl: 'app/app.html',
+      templateUrl: 'app/home/app.html',
       controller: 'AppCtrl as app'
     };
 

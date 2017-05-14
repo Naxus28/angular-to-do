@@ -9,7 +9,7 @@
     let errorState = {
       name: 'error',
       url: '/404',
-      templateUrl: 'error/error.html',
+      templateUrl: 'app/error/error.html',
       controller: 'ErrorCtrl as error'
     };
 

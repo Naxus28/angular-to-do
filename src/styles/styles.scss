@@ -4,5 +4,6 @@
 @import 'partials/variables';
 @import 'helpers/mixins';
 @import 'partials/base';
-@import 'views/app';
-@import 'views/error';
+@import 'directives/circle-progress';
+@import 'app/home';
+@import 'app/error';
