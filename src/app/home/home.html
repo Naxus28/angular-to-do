@@ -1,0 +1,17 @@
+<div class="to-dos-wrapper">
+  <div class="to-dos-wrapper__to-dos">
+    <h2>These are your to-dos for today</h2>
+    <ul class="to-dos-wrapper__list">
+      <li class="to-dos-wrapper__list-item" ng-repeat="todo in home.todos">
+        <p>{{todo}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="to-dos-wrapper__progress-circle">
+    <circle-progress size="250" 
+                     gradient-colors="['green', 'blue']"
+                     thickness="30">
+    </circle-progress>
+  </div>
+</div>
+

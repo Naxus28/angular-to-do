@@ -2,15 +2,15 @@
   'use strict';
 
   angular
-    .module('app')
+    .module('home')
     .config(config);
 
   function config($stateProvider) {
     let appState = {
       name: 'home',
       url: '/',
-      templateUrl: 'app/home/app.html',
-      controller: 'AppCtrl as app'
+      templateUrl: 'app/home/home.html',
+      controller: 'HomeCtrl as home'
     };
 
     $stateProvider.state(appState);

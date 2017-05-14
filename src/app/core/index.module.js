@@ -15,7 +15,7 @@
     /**
      * main modules
      */
-    'app',
+    'home',
     'error'
   ]);
 })();
