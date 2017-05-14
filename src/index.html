@@ -4,6 +4,7 @@
     <base href="/src">
     <meta charset="UTF-8">
     <title>Angular to-do app</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- bower:css -->
     <!-- endbower -->
     
@@ -11,13 +12,16 @@
     <!-- endinject -->
   </head>
   <body ng-app="todoApp">
-    
     <div class="wrapper">
-    <a ui-sref="home" ui-sref-active="active">Home</a>
-    <a ui-sref="error" ui-sref-active="active">Error</a>
-      <div ui-view>
+      <header>
+        <h1>Angular To-Do App</h1>
+      </header>
+      <div class="content" ui-view>
         <!-- states load here --> 
       </div>
+      <footer>
+        <p>Gabriel Ferraz &copy; 2017</p>
+      </footer>
     </div>
     <!-- bower:js -->
     <!-- endbower -->

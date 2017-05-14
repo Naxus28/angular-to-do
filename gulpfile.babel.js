@@ -101,11 +101,7 @@ gulp.task('reload', () => browserSync.reload());
 /*
  * server config and task
  */
- 
-browserSync.use(spa({
-  // Only needed for angular apps
-  selector: '[ng-app]'
-}));
+browserSync.use(spa({ selector: '[ng-app]' })); // Only needed for angular apps
 
 const devServers = [
   config.dirPaths.bower,
@@ -113,10 +109,10 @@ const devServers = [
   config.dirPaths.src
 ];
 
-let browserSyncInit = (devServers) => {
+let browserSyncInit = (servers) => {
   browserSync({
     startPath: '/',
-    server: devServers
+    server: servers
   });
 };
 
