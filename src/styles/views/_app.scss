@@ -1,0 +1,11 @@
+div.to-dos-wrapper {
+  width: 60%;
+  margin: 0px auto;
+}
+li.to-dos-wrapper__list-item {
+  background: $fountain-blue;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: white;
+}

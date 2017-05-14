@@ -72,13 +72,13 @@ body {
 
 h1 {
   text-transform: uppercase;
-  font-size: 2.5em;
+  font-size: 2.2em;
   padding: 10px;
   text-align: center;
   color: white; }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 1.6em;
   text-align: center;
   margin-top: 30px;
   margin-bottom: 30px; }
@@ -87,19 +87,10 @@ p {
   font-size: 1.2em;
   line-height: 26px; }
 
-div {
-  padding-top: 10px;
-  padding-bottom: 10px; }
-
-header {
-  padding: 20px 0px; }
-
 header {
   width: 100%;
+  padding: 10px 0px;
   background: #B2957C; }
-
-footer {
-  padding: 10px 0px; }
 
 div.wrapper {
   min-height: 100%;
@@ -122,10 +113,23 @@ div.content {
 
 footer {
   width: 100%;
+  padding: 10px 0px;
   background: #B2957C; }
-  footer p {
-    color: white;
-    text-align: center;
-    padding: 5px; }
+
+footer p {
+  color: white;
+  text-align: center;
+  padding: 5px; }
+
+div.to-dos-wrapper {
+  width: 60%;
+  margin: 0px auto; }
+
+li.to-dos-wrapper__list-item {
+  background: #4C9FBA;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: white; }
 
 /*# sourceMappingURL=styles.css.map */
