@@ -53,15 +53,17 @@ gulp.task('sass', () => {
  * inject
  */
 gulp.task('inject', ['sass'], () => {
-  let cssSource = gulp.src(path.join(config.dirPaths.temp, 'styles', config.fileTypesForBuilds.dev.css), { read: false });
+  let injectCss = gulp.src(path.join(config.dirPaths.temp, 'styles', config.fileTypesForBuilds.dev.css), { read: false });
   let targetHtml = path.join(config.dirPaths.temp, 'index.html');
-
+  var injectScripts = gulp.src([
+    path.join(config.dirPaths.src, 'app/**/*.module.js'),
+    path.join(config.dirPaths.src, 'app/**/*.config.js'),
+    path.join(config.dirPaths.src, 'app/**/*.js')
+  ]);
+  
   return gulp.src(targetHtml)
-    .pipe(plugins.inject(
-      gulp.src(config.srcFiles.js).pipe(plugins.angularFilesort()),
-      config.jsInjectOptions
-    ))
-    .pipe(plugins.inject(cssSource, config.cssInjectOptions))
+    .pipe(plugins.inject(injectScripts, config.jsInjectOptions))
+    .pipe(plugins.inject(injectCss, config.cssInjectOptions))
     .pipe(gulp.dest(config.dirPaths.temp));
 }); 
 
@@ -77,7 +79,7 @@ gulp.task('lint', () => {
 /*
  * wiredep
  */
-gulp.task('wiredep', function () {
+gulp.task('wiredep', () => {
   return gulp.src(path.join(config.dirPaths.src, '/index.html'))
     .pipe(wiredep(config.wiredepConfig))
     .pipe(gulp.dest(config.dirPaths.temp));
@@ -101,7 +103,7 @@ gulp.task('reload', () => browserSync.reload());
 /*
  * server config and task
  */
-browserSync.use(spa({ selector: '[ng-app]' })); // Only needed for angular apps
+browserSync.use(spa({ selector: '[ng-app]' })); // needed for angular apps--manages history API
 
 const devServers = [
   config.dirPaths.bower,

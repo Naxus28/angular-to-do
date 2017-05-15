@@ -5,29 +5,37 @@
     .module('home')
     .controller('HomeCtrl', HomeCtrl);
 
-  /* @ngInject */
   function HomeCtrl(todoService, $log) {
     let vm = this;
-    let errorMsg = `There was an error with the application. 
-                    Please refresh the page to try again or contact an administrator. 
-                    We apologize for any inconvenience.`;
+    let circleOptions = {
+      size: 190,
+      gradientColors: ['green', 'blue'],
+      thickness: 30
+    };
+    todoService.setCircleOptions(circleOptions);
+    vm.circleOptions = todoService.getCircleOptions();
 
-    vm.toggleTodo = (todo) => vm.todoItem = todo;
-    vm.gradientColors = todoService.gradientColors;
+    vm.updateTodoModel = (todo) => vm.todoItem = todo === vm.todoItem ? 'removeTodo' : todo;
+    vm.fetchTodos = fetchTodos;
+    vm.resetTodoList = () => vm.resetCompletedList = true;
 
-    todoService.getTodos()
-    .then( 
-      response => {
-        if (response.data.todos.length) {
-          vm.todos = response.data.todos;
-        } else {
-          vm.noTodosMsg = 'There are no to-dos for today!';
+    function fetchTodos() {
+      todoService.getTodos()
+      .then(
+        response => {
+          if (response.data.todos.length) {
+            vm.todos = todoService.getSixRandomTodos(response.data.todos);
+          } else {
+            vm.noTodosMsg = 'There are no to-dos for today!';
+          }
+        },
+        err => {
+          $log.error('Error: ', err);
+          vm.error = 'There was an error loading the application. Please refresh the page to try again later. We apologize for any inconvenience.';
         }
-      },
-      err => {
-        $log.error('Error: ', err);
-        vm.error = errorMsg;
-      });
-  }
+      );
+    }
 
+    fetchTodos();
+  }
 })();

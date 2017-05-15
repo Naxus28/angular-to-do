@@ -5,16 +5,21 @@
     .factory('todoService', todoService);
 
   function todoService($http) {
-    const gradientColors = ['green', 'blue'];
-    const service = { 
-      getTodos,
-      gradientColors
+    const circleOptions = {
+      size: 0,
+      gradientColors: [],
+      thickness: 0
     };
 
-    return service;
+    let getCircleOptions = () => circleOptions;
+    let getSixRandomTodos = (todoList) => _.shuffle(todoList).slice(0, 6);
+    let setCircleOptions = (optionsObj) => {
+      _.forIn(optionsObj, (value, key) => {
+        circleOptions[key] = value;
+      }); 
+    };
 
-    ///////////////////
-    function getTodos() {
+    let getTodos = () => {
       const url = 'app/home/todos.json';
       const requestObj = { 
         method: 'GET', 
@@ -25,6 +30,15 @@
       };
       
       return $http(requestObj);
-    }
+    };
+
+    const service = { 
+      getCircleOptions,
+      getSixRandomTodos,
+      getTodos,
+      setCircleOptions
+    };
+
+    return service;
   }
 })();

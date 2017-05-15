@@ -81,11 +81,28 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-size: 1.6em;
-  font-weight: 500; }
+  font-weight: 500;
+  line-height: 30px; }
+
+h3 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 26px; }
 
 p {
   font-size: 1.2em;
   line-height: 26px; }
+
+a {
+  color: #4C9FBA;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  cursor: default; }
+  a:hover {
+    color: #008CBA; }
 
 header {
   width: 100%;
@@ -122,11 +139,28 @@ footer p {
   padding: 5px; }
 
 div.circle-progress-wrapper__circle {
-  margin-top: 40px; }
+  margin-top: 30px; }
 
 div.circle-progress-wrapper__circle canvas {
   display: block;
   margin: 0 auto; }
+
+div.circle-progress-wrapper__complete-todos-list li,
+div.circle-progress-wrapper__all-todos-completed p {
+  margin-top: 6px;
+  text-align: center; }
+
+div.circle-progress-wrapper__all-todos-completed p {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 1.3em; }
+
+div.circle-progress-wrapper__all-todos-completed {
+  color: #29704D;
+  font-weight: 500; }
+
+.fa.fa-check {
+  color: #7EAEB0; }
 
 div.to-dos-wrapper {
   display: -webkit-box;
@@ -143,10 +177,13 @@ div.to-dos-wrapper__progress-circle {
 
 li.to-dos-wrapper__list-item {
   background: #7B99B0;
-  padding: 12px;
+  padding: 20px;
   margin-bottom: 10px;
   border-radius: 5px;
   color: white; }
+
+li.to-dos-wrapper__list-item p {
+  font-size: 1.3em; }
 
 div.to-dos-wrapper__no-todos p {
   text-align: center; }

@@ -8,12 +8,15 @@ div.to-dos-wrapper__progress-circle {
 }
 li.to-dos-wrapper__list-item {
   background: $bali-hai;
-  padding: 12px;
+  padding: 20px;
   margin-bottom: 10px;
   border-radius: 5px;
   color: white;
 }
 
+li.to-dos-wrapper__list-item p {
+  font-size: 1.3em;
+}
 div.to-dos-wrapper__no-todos p {
   text-align: center;
 }

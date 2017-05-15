@@ -1,11 +1,11 @@
 <div class="to-dos-wrapper">
   <div class="to-dos-wrapper__to-dos">
-    <h2>These are your to-dos for today</h2>
+    <h2>These are the to-dos you have for today. <a ng-click="home.fetchTodos(); home.resetTodoList()">Click here</a> if you wish to refresh this list.
+    </h2>
     <ul class="to-dos-wrapper__list" ng-if="!home.error && home.todos">
       <li class="to-dos-wrapper__list-item" 
           ng-repeat="todo in home.todos track by $index"
-          ng-click="home.toggleTodo(todo)"
-          ng-model="home.todoItem">
+          ng-click="home.updateTodoModel(todo)">
         <p>{{ todo }}</p>
       </li>
     </ul>
@@ -16,13 +16,12 @@
       <p>{{ home.error }}</p>
     </div>
   </div>
-
   <div class="to-dos-wrapper__progress-circle">
-    <circle-progress size="250" 
-                     gradient-colors="home.gradientColors"
-                     thickness="30"
+    <circle-progress size="{{ home.circleOptions.size }}" 
+                     gradient-colors="home.circleOptions.gradientColors"
+                     thickness="{{ home.circleOptions.thickness }}"
                      todo="home.todoItem"
-                     >
+                     reset="home.resetCompletedList">
     </circle-progress>
   </div>
 </div>

@@ -8,14 +8,14 @@
     'ui.router',
 
     /**
-     * directives
-     */
-    'directives',
-
-    /**
      * main modules
      */
     'home',
-    'error'
+    'error',
+
+    /**
+     * directives
+     */
+    'directives'
   ]);
 })();
