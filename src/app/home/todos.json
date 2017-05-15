@@ -1,39 +1,39 @@
 {
   "todos": [
     {
-      "todo" : "Buy groceries",
+      "item" : "Buy groceries",
       "active" : false
     },
     {
-      "todo" : "Buy groceries",
+      "item" : "Buy groceries",
       "active" : false
     },
     {
-      "todo" : "Pay electric bill",
+      "item" : "Pay electric bill",
       "active" : false
     },
     {
-      "todo" : "Pay morgage",
+      "item" : "Pay morgage",
       "active" : false
     },
     {
-      "todo" : "Take the trash out",
+      "item" : "Take the trash out",
       "active" : false
     },
     {
-      "todo" : "Call car insurance agent",
+      "item" : "Call car insurance agent",
       "active" : false
     },
     {
-      "todo" : "Book vacation trip",
+      "item" : "Book vacation trip",
       "active" : false
     },
     {
-      "todo" : "Renew EggHead.io subscription",
+      "item" : "Renew EggHead.io subscription",
       "active" : false
     },
     {
-      "todo" : "Unpack books",
+      "item" : "Unpack books",
       "active" : false
     }
   ]

@@ -13,7 +13,7 @@
         thickness: '@',
         gradientColors: '=',
         todo: '=',
-        resetTodoList: '='
+        resetTodos: '='
       },
       link: link,
       templateUrl: 'app/directives/circle-progress/circle-progress.html'
@@ -26,9 +26,26 @@
       
       let getCompletedTodos = () => _completedTodos;
 
+      let resetCompletedTodos = () =>_completedTodos = [];
+
       let setTodoListView = () => scope.completedTodos = _completedTodos;
 
-      let resetCompletedTodos = () =>_completedTodos = [];
+      let addCompletedTodo = (todo) => _completedTodos.push(todo);
+
+      let deleteTodo = (todo) => {
+        let todoIndex = _completedTodos.indexOf(todo);
+        _completedTodos.splice(todoIndex, 1);
+      };
+
+      let setCircleProgressView = () => {
+        let progress = getupdatedCircleValue();
+        $('#circle').circleProgress('value', progress); //updates circle value
+      };
+      
+      let setView = () => {
+        setTodoListView(); 
+        setCircleProgressView();
+      };
 
       let getupdatedCircleValue = () => {
         let completedTodos = getCompletedTodos();
@@ -37,32 +54,23 @@
         return progress;
       };
 
-      let setCircleProgressView = () => {
-        let progress = getupdatedCircleValue();
-        $('#circle').circleProgress('value', progress); //updates circle value
-      };
-
       let updateTodosAndSetView = (todo) => {
         if (!_completedTodos.includes(todo)) {
-          _completedTodos.push(todo);
-          setCircleProgressView();
+          addCompletedTodo(todo);
         } else {
-          let todoIndex = _completedTodos.indexOf(todo);
-          _completedTodos.splice(todoIndex, 1);
-          setCircleProgressView();
+          deleteTodo(todo);
         }
         
-        setTodoListView(); // update view
+        setView();
       };
       
       /**
        * watch parent scope and update the directive's template with new values
        */
-      scope.$watchGroup(['todo.active', 'todo.todo'], () => scope.todo && updateTodosAndSetView(scope.todo));
-      scope.$watch('resetTodoList', () => {
+      scope.$watchGroup(['todo.active', 'todo.item'], () => scope.todo && updateTodosAndSetView(scope.todo));
+      scope.$watch('resetTodos', () => {
         resetCompletedTodos(); 
-        setTodoListView();
-        setCircleProgressView(); 
+        setView(); 
       });
       
       /**

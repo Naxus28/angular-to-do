@@ -5,11 +5,11 @@
     <h3>Completed to-dos</h3>
     <ul>
       <li ng-repeat="todo in completedTodos track by $index">
-        <p>{{ $index + 1 }}. {{ todo.todo }} <i class="fa fa-check" aria-hidden="true"></i></p>
+        <p>{{ $index + 1 }}. {{ todo.item }} <i class="fa fa-check" aria-hidden="true"></i></p>
       </li>
     </ul>
     <div class="circle-progress-wrapper__all-todos-completed" ng-if="completedTodos.length === 6">
-      <p>Congrats, you completed all to-dos for today! You may relax now!</p>
+      <p>Congrats, you completed all your to-dos!</p>
     </div>
   </div>
 </div>
