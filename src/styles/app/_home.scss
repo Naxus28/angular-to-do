@@ -6,6 +6,14 @@ div.to-dos-wrapper__to-dos,
 div.to-dos-wrapper__progress-circle {
   flex: 50%;
 }
+div.to-dos-wrapper__to-dos h2 {
+  margin-bottom: 15px;
+}
+div.to-dos-wrapper__to-dos > p{
+  text-align: center;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
 li.to-dos-wrapper__list-item {
   background: $bali-hai;
   padding: 20px;
@@ -13,7 +21,6 @@ li.to-dos-wrapper__list-item {
   border-radius: 5px;
   color: white;
 }
-
 li.to-dos-wrapper__list-item p {
   font-size: 1.3em;
 }

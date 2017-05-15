@@ -13,7 +13,7 @@
         thickness: '@',
         gradientColors: '=',
         todo: '=',
-        reset: '='
+        resetTodoList: '='
       },
       link: link,
       templateUrl: 'app/directives/circle-progress/circle-progress.html'
@@ -33,13 +33,10 @@
         let circleValue = todosList.length === 6 ? 1 : todosList.length / 6;
         $('#circle').circleProgress('value', circleValue); //updates circle value
       };
-      let setTodoList = () => scope.completedTodos = getCompletedTodos();
-      let resetTodoList = () => {
-        _completedTodos = [];
-        setTodoList();
-      };
-      let updateTodoList = (todo) => {
-        if (!_completedTodos.includes(todo) && todo !== undefined && todo !== 'removeTodo') {
+      let setTodoList = () => scope.completedTodos = _completedTodos;
+      let resetTodoList = () =>_completedTodos = [];
+      let updateTodosAndSetView = (todo) => {
+        if (!_completedTodos.includes(todo) && todo !== 'removeTodo' && todo !== undefined) {
           _completedTodos.push(todo);
           updateProgressCircleValue();
         } else {
@@ -54,10 +51,10 @@
       /**
        * watch parent scope and update the directive's template with new values
        */
-      scope.$watch('todo', () => updateTodoList(scope.todo));
-      scope.$watch('reset', () => {
+      scope.$watch('todo', () => updateTodosAndSetView(scope.todo));
+      scope.$watch('resetTodoList', () => {
         resetTodoList();
-        updateProgressCircleValue();
+        updateTodosAndSetView();
       });
       
       /**

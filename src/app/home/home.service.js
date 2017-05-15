@@ -5,12 +5,18 @@
     .factory('todoService', todoService);
 
   function todoService($http) {
+    /**
+     * default circle options
+     */
     const circleOptions = {
       size: 0,
       gradientColors: [],
       thickness: 0
     };
 
+    /**
+     * getters and setters
+     */
     let getCircleOptions = () => circleOptions;
     let getSixRandomTodos = (todoList) => _.shuffle(todoList).slice(0, 6);
     let setCircleOptions = (optionsObj) => {
@@ -18,7 +24,6 @@
         circleOptions[key] = value;
       }); 
     };
-
     let getTodos = () => {
       const url = 'app/home/todos.json';
       const requestObj = { 

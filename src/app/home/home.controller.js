@@ -13,11 +13,17 @@
       thickness: 30
     };
     todoService.setCircleOptions(circleOptions);
-    vm.circleOptions = todoService.getCircleOptions();
 
-    vm.updateTodoModel = (todo) => vm.todoItem = todo === vm.todoItem ? 'removeTodo' : todo;
+    vm.circleOptions = todoService.getCircleOptions();
+    vm.updateTodoModel = (todo) => {
+      console.log('vm.todoItem :', vm.todoItem );
+      console.log('todo :', todo );
+      console.log('todo === vm.todoItem: ', todo === vm.todoItem);
+      vm.todoItem = todo === vm.todoItem ? 'removeTodo' : todo;
+      console.log('new todo: ', vm.todoItem);
+    }
+    vm.resetTodoList = () => vm.resetCompletedList = !vm.resetCompletedList;
     vm.fetchTodos = fetchTodos;
-    vm.resetTodoList = () => vm.resetCompletedList = true;
 
     function fetchTodos() {
       todoService.getTodos()
