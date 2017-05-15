@@ -71,7 +71,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 300; }
 
-h1 {
+h1, .h1 {
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
@@ -79,7 +79,7 @@ h1 {
   font-weight: 500;
   color: white; }
 
-h2 {
+h2, .h2 {
   margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
@@ -87,7 +87,7 @@ h2 {
   font-weight: 500;
   line-height: 30px; }
 
-h3 {
+h3, .h3 {
   margin-top: 15px;
   margin-bottom: 15px;
   text-align: center;
@@ -178,7 +178,7 @@ div.to-dos-wrapper__progress-circle {
 div.to-dos-wrapper__to-dos h2 {
   margin-bottom: 15px; }
 
-div.to-dos-wrapper__to-dos > p {
+div.to-dos-wrapper__to-dos-block > p {
   text-align: center;
   font-size: 1.3em;
   margin-bottom: 15px; }
@@ -191,7 +191,8 @@ li.to-dos-wrapper__list-item {
   color: white; }
 
 li.to-dos-wrapper__list-item p {
-  font-size: 1.3em; }
+  font-size: 1.3em;
+  font-weight: 500; }
 
 div.to-dos-wrapper__no-todos p {
   text-align: center; }

@@ -5,18 +5,20 @@
     .module('home')
     .controller('HomeCtrl', HomeCtrl);
 
-  function HomeCtrl(todoService, $log) {
+  function HomeCtrl($log, todoService, todosProgressService) {
     let vm = this;
-    
     let circleOptions = {
+      value: 0,
       size: 190,
-      gradientColors: ['green', 'blue'],
-      thickness: 30
+      thickness: 30,
+      fill: {
+        gradient: ['green', '#A990B0', 'rgb(63, 97, 176)']
+      }
     };
 
-    todoService.setCircleOptions(circleOptions);
+    todosProgressService.setCircleOptions(circleOptions);
 
-    vm.circleOptions = todoService.getCircleOptions();
+    vm.circleOptions = todosProgressService.getCircleOptions();
 
     vm.fetchTodos = fetchTodos;
 

@@ -1,37 +1,38 @@
 <div class="to-dos-wrapper">
   <div class="to-dos-wrapper__to-dos">
-    <h2>These are 6 out of 10 to-dos you can complete today.</h2>
-    <p>
-      <a ng-click="home.fetchTodos(); home.resetTodos = !home.resetTodos">Click</a> if you wish to refresh this list.
-    </p>
-    <ul class="to-dos-wrapper__list" ng-if="!home.error && home.todos">
-      <li class="to-dos-wrapper__list-item" 
-          ng-repeat="todo in home.todos track by $index"
-          ng-click="home.todoItem = todo; todo.active = !todo.active;"
-          ng-model="home.todoItem">
-        <p>
-          <input type="checkbox" 
-                 ng-model="todo.active" 
-                 ng-click="$event.stopPropagation(); home.todoItem = todo;"/> 
-                 {{ todo.item }}
-        </p>
-      </li>
-    </ul>
-
+    <div class="to-dos-wrapper__to-dos-block" ng-if="!home.error && home.todos">
+      <h2>These are 6 out of 10 to-dos you can complete today.</h2>
+      <p>
+        <a ng-click="home.fetchTodos(); home.resetTodos = !home.resetTodos">Click</a> if you wish to refresh this list.
+      </p>
+      <ul class="to-dos-wrapper__list">
+        <li class="to-dos-wrapper__list-item" 
+            ng-repeat="todo in home.todos track by $index"
+            ng-click="home.todoItem = todo; todo.active = !todo.active;"
+            ng-model="home.todoItem">
+          <p>
+            <input type="checkbox" 
+                   ng-model="todo.active" 
+                   ng-click="$event.stopPropagation(); home.todoItem = todo;"/> 
+                   {{ todo.item }}
+          </p>
+        </li>
+      </ul>
+    </div>
     <div class="to-dos-wrapper__no-todos" ng-if="!home.error && home.noTodosMsg">
-      <p>{{ home.noTodosMsg }}</p>
+      <p class="h2">{{ home.noTodosMsg }}</p>
     </div>    
     <div class="to-dos-wrapper__error" ng-if="home.error">
-      <p>{{ home.error }}</p>
+      <p class="h2">{{ home.error }}</p>
     </div>
   </div>
   <div class="to-dos-wrapper__progress-circle">
-    <circle-progress size="{{ home.circleOptions.size }}" 
-                     gradient-colors="home.circleOptions.gradientColors"
+    <todos-progress size="{{ home.circleOptions.size }}" 
+                     gradient="home.circleOptions.fill.gradient"
                      thickness="{{ home.circleOptions.thickness }}"
                      todo="home.todoItem"
                      reset-todos="home.resetTodos">
-    </circle-progress>
+    </todos-progress>
   </div>
 </div>
 

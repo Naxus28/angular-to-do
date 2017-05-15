@@ -14,7 +14,7 @@ body {
   font-family: $lato;
   font-weight: 300; 
 }
-h1 {
+h1, .h1 {
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
@@ -22,7 +22,7 @@ h1 {
   font-weight: 500;
   color: white;
 }
-h2 {
+h2, .h2 {
   margin-top: 30px;
   margin-bottom: 30px; 
   text-align: center;
@@ -30,7 +30,7 @@ h2 {
   font-weight: 500;
   line-height: 30px;
 }
-h3 {
+h3, .h3{
   margin-top: 15px;
   margin-bottom: 15px; 
   text-align: center;

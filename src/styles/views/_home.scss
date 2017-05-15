@@ -9,7 +9,7 @@ div.to-dos-wrapper__progress-circle {
 div.to-dos-wrapper__to-dos h2 {
   margin-bottom: 15px;
 }
-div.to-dos-wrapper__to-dos > p{
+div.to-dos-wrapper__to-dos-block > p{
   text-align: center;
   font-size: 1.3em;
   margin-bottom: 15px;
@@ -23,6 +23,7 @@ li.to-dos-wrapper__list-item {
 }
 li.to-dos-wrapper__list-item p {
   font-size: 1.3em;
+  font-weight: 500;
 }
 div.to-dos-wrapper__no-todos p {
   text-align: center;

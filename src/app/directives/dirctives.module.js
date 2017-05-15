@@ -1,6 +1,9 @@
 (function () {
   'use strict';
   
-  angular.module('directives', ['circleProgress']);
-  
+  angular.module('directives', [
+
+    'todosProgress'
+    
+  ]);
 })();
