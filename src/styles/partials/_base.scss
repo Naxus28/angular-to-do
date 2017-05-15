@@ -45,6 +45,7 @@ p {
 a {
   color: $fountain-blue;
   transition: color .3s ease;
+  text-decoration: none;
   cursor: default;
   &:hover {
     color: $bondi-blue;
