@@ -24,41 +24,49 @@
     function link(scope) {
       let _completedTodos = [];
       
-      /**
-       * getters and setters
-       */
       let getCompletedTodos = () => _completedTodos;
-      let updateProgressCircleValue = () => {
-        let todosList = getCompletedTodos();
-        let circleValue = todosList.length === 6 ? 1 : todosList.length / 6;
-        $('#circle').circleProgress('value', circleValue); //updates circle value
+
+      let setTodoListView = () => scope.completedTodos = _completedTodos;
+
+      let resetCompletedTodos = () =>_completedTodos = [];
+
+      let getupdatedCircleValue = () => {
+        let completedTodos = getCompletedTodos();
+        let progress = completedTodos.length === 6 ? 1 : completedTodos.length / 6;
+
+        return progress;
       };
-      let setTodoList = () => scope.completedTodos = _completedTodos;
-      let resetTodoList = () =>_completedTodos = [];
+
+      let setCircleProgressView = () => {
+        let progress = getupdatedCircleValue();
+        $('#circle').circleProgress('value', progress); //updates circle value
+      };
+
       let updateTodosAndSetView = (todo) => {
-        if (!_completedTodos.includes(todo) && todo !== 'removeTodo' && todo !== undefined) {
+        if (!_completedTodos.includes(todo)) {
           _completedTodos.push(todo);
-          updateProgressCircleValue();
+          setCircleProgressView();
         } else {
           let todoIndex = _completedTodos.indexOf(todo);
           _completedTodos.splice(todoIndex, 1);
-          updateProgressCircleValue();
+          setCircleProgressView();
         }
         
-        setTodoList(); // update view
+        setTodoListView(); // update view
       };
       
       /**
        * watch parent scope and update the directive's template with new values
        */
-      scope.$watch('todo', () => updateTodosAndSetView(scope.todo));
+      scope.$watchGroup(['todo.active', 'todo.todo'], () => scope.todo && updateTodosAndSetView(scope.todo));
       scope.$watch('resetTodoList', () => {
-        resetTodoList();
-        updateTodosAndSetView();
+        resetCompletedTodos(); 
+        setTodoListView();
+        setCircleProgressView(); 
       });
       
       /**
-       * cirle progress configuration and DOM manipulation
+       * cirle progress initial configuration 
        */
       const circleOptions = {
         value: getCompletedTodos(),

@@ -1,14 +1,40 @@
 {
   "todos": [
-    "Buy groceries",
-    "Buy new dress shirt",
-    "Pay electric bill",
-    "Pay morgage",
-    "Take the trash out",
-    "Call car insurance agent",
-    "Cook dinner",
-    "Book vacation trip",
-    "Renew EggHead.io subscription",
-    "Unpack book"
+    {
+      "todo" : "Buy groceries",
+      "active" : false
+    },
+    {
+      "todo" : "Buy groceries",
+      "active" : false
+    },
+    {
+      "todo" : "Pay electric bill",
+      "active" : false
+    },
+    {
+      "todo" : "Pay morgage",
+      "active" : false
+    },
+    {
+      "todo" : "Take the trash out",
+      "active" : false
+    },
+    {
+      "todo" : "Call car insurance agent",
+      "active" : false
+    },
+    {
+      "todo" : "Book vacation trip",
+      "active" : false
+    },
+    {
+      "todo" : "Renew EggHead.io subscription",
+      "active" : false
+    },
+    {
+      "todo" : "Unpack books",
+      "active" : false
+    }
   ]
 }

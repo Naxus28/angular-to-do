@@ -6,7 +6,7 @@
 
   function todoService($http) {
     /**
-     * default circle options
+     * initialize progress circle options
      */
     const circleOptions = {
       size: 0,
@@ -14,16 +14,10 @@
       thickness: 0
     };
 
-    /**
-     * getters and setters
-     */
     let getCircleOptions = () => circleOptions;
+
     let getSixRandomTodos = (todoList) => _.shuffle(todoList).slice(0, 6);
-    let setCircleOptions = (optionsObj) => {
-      _.forIn(optionsObj, (value, key) => {
-        circleOptions[key] = value;
-      }); 
-    };
+
     let getTodos = () => {
       const url = 'app/home/todos.json';
       const requestObj = { 
@@ -34,7 +28,13 @@
         }
       };
       
-      return $http(requestObj);
+      return $http(requestObj); // returns a promise
+    };
+    
+    let setCircleOptions = (optionsObj) => {
+      _.forIn(optionsObj, (value, key) => {
+        circleOptions[key] = value;
+      }); 
     };
 
     const service = { 
@@ -44,6 +44,6 @@
       setCircleOptions
     };
 
-    return service;
+    return service; // exposes service API
   }
 })();

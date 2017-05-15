@@ -2,15 +2,22 @@
   <div class="to-dos-wrapper__to-dos">
     <h2>These are the to-dos you have for today.</h2>
     <p>
-      <a ng-click="home.fetchTodos(); home.resetTodoList()">Click here</a> if you wish to refresh this list.
+      <a ng-click="home.fetchTodos(); home.resetCompletedList = !home.resetCompletedList">Click here</a> if you wish to refresh this list.
     </p>
     <ul class="to-dos-wrapper__list" ng-if="!home.error && home.todos">
       <li class="to-dos-wrapper__list-item" 
           ng-repeat="todo in home.todos track by $index"
-          ng-click="home.updateTodoModel(todo)">
-        <p>{{ todo }}</p>
+          ng-click="home.todoItem = todo; todo.active = !todo.active;"
+          ng-model="home.todoItem">
+        <p>
+          <input type="checkbox" 
+                 ng-model="todo.active" 
+                 ng-click="$event.stopPropagation(); home.todoItem = todo;"/> 
+                 {{ todo.todo }}
+        </p>
       </li>
     </ul>
+
     <div class="to-dos-wrapper__no-todos" ng-if="!home.error && home.noTodosMsg">
       <p>{{ home.noTodosMsg }}</p>
     </div>    
