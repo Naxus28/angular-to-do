@@ -35,6 +35,10 @@
     {
       "item" : "Unpack books",
       "active" : false
+    },
+    {
+      "item" : "Take car to mechanic to check oil level",
+      "active" : false
     }
   ]
 }
