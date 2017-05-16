@@ -14,7 +14,7 @@
     };
 
     function link(scope) {
-      scope.completedTodos = todoService.getCompletedTodos();
+      scope.completedTodos = todoService.getTodos();
     }
   }
 })();

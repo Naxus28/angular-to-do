@@ -7,9 +7,6 @@
   function todoService() {
     let _completedTodos = []; // holds todos state
 
-    /**
-     * todos methods
-     */
     let addTodo = (todo) => _completedTodos.push(todo);
 
     let deleteTodo = (todo) => {
@@ -17,9 +14,9 @@
       _completedTodos.splice(todoIndex, 1);
     };
     
-    let getCompletedTodos = () => _completedTodos;
+    let getTodos = () => _completedTodos;
 
-    let resetCompletedTodos = () => _completedTodos.length = 0;
+    let resetTodos = () => _completedTodos.length = 0;
 
     let toggleTodo = (todo) => {
       if (!_completedTodos.includes(todo)) {
@@ -30,8 +27,8 @@
     };
 
     const service = { 
-      getCompletedTodos,
-      resetCompletedTodos,
+      getTodos,
+      resetTodos,
       toggleTodo
     };
 

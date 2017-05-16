@@ -10,7 +10,7 @@
     let getCircleOptions = () => _circleOptions;
     
     let getUpdatedCircleValue = () => {
-      let completedTodos = todoService.getCompletedTodos();
+      let completedTodos = todoService.getTodos();
       let progress = completedTodos.length === 6 ? 1 : completedTodos.length / 6;
 
       return progress;
@@ -20,9 +20,6 @@
       _circleOptions = _.cloneDeep(optionsObj);
     };
 
-    /**
-     * DOM method
-     */
     let updateProgressCircle = () => {
       let progress = getUpdatedCircleValue();
       $('#circle').circleProgress('value', progress); //updates circle value

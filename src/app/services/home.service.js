@@ -1,13 +1,10 @@
 (function() {
   'use strict';
   angular
-    .module('home')
+    .module('services')
     .factory('homeService', homeService);
 
   function homeService($http) {
-    /**
-     * initialize progress circle options
-     */
     let getSixRandomTodos = (todoList) => _.shuffle(todoList).slice(0, 6);
 
     let getTodos = () => {

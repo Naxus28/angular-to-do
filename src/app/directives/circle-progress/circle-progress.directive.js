@@ -54,7 +54,7 @@
           return;
         }
 
-        todoService.resetCompletedTodos(); 
+        todoService.resetTodos(); 
         circleProgressService.updateProgressCircle(); 
       });
     }
