@@ -27,12 +27,15 @@
     </div>
   </div>
   <div class="to-dos-wrapper__progress-circle">
-    <todos-progress size="{{ home.circleOptions.size }}" 
-                     gradient="home.circleOptions.fill.gradient"
-                     thickness="{{ home.circleOptions.thickness }}"
-                     todo="home.todoItem"
-                     reset-todos="home.resetTodos">
-    </todos-progress>
+    <todos-progress-directive size="{{ home.circleOptions.size }}" 
+                              gradient="home.circleOptions.fill.gradient"
+                              thickness="{{ home.circleOptions.thickness }}"
+                              todo="home.todoItem"
+                              reset-todos="home.resetTodos">
+    </todos-progress-directive>
+    
+    <todo-list-directive></todo-list-directive>
+    
   </div>
 </div>
 

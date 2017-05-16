@@ -2,8 +2,7 @@
   'use strict';
   
   angular.module('directives', [
-
-    'todosProgress'
-    
+    'todosProgress',
+    'todoList'
   ]);
 })();

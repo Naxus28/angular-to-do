@@ -2,10 +2,10 @@
   'use strict';
   angular
     .module('todosProgress')
-    .directive('todosProgress', todosProgress);
+    .directive('todosProgressDirective', todosProgressDirective);
 
-  function todosProgress (todosProgressService) {
-    let circleProgressObj = {
+  function todosProgressDirective (todosProgressService) {
+    return {
       restrict: 'E',
       replace: true,
       scope: {
@@ -19,8 +19,6 @@
       templateUrl: 'app/directives/todos-progress/todos-progress.html'
     };
     
-    return circleProgressObj;
-
     function link(scope) {
       let defaultCircleOptions = {
         size: scope.size,
@@ -39,10 +37,10 @@
       /**
        * watch parent scope and update the directive's template with new values
        */
-      scope.$watchGroup(['todo.active', 'todo.item'], () => scope.todo && todosProgressService.updateTodosAndSetView(scope.todo));
+      scope.$watchGroup(['todo.active', 'todo.item'], () => scope.todo && todosProgressService.updateTodosAndSetView(scope));
       scope.$watch('resetTodos', () => {
         todosProgressService.resetCompletedTodos(); 
-        todosProgressService.setView(scope); 
+        todosProgressService.setProgressCircleView(); 
       });
     }
   }

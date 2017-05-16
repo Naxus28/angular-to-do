@@ -54,14 +54,14 @@
       setProgressCircleView();
     };
     
-    let updateTodosAndSetView = (todo) => {
-      if (!_completedTodos.includes(todo)) {
-        addCompletedTodo(todo);
+    let updateTodosAndSetView = (scope) => {
+      if (!_completedTodos.includes(scope.todo)) {
+        addCompletedTodo(scope.todo);
       } else {
-        deleteTodo(todo);
+        deleteTodo(scope.todo);
       }
       
-      setView(todo);
+      setView(scope);
     };
 
     const service = { 
@@ -69,6 +69,8 @@
       getCompletedTodos,
       resetCompletedTodos,
       setCircleOptions,
+      setTodoListView,
+      setProgressCircleView,
       setView,
       updateTodosAndSetView
     };

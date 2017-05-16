@@ -1,0 +1,14 @@
+div.todos-list-wrapper__todos li,
+div.todos-list-wrapper__all-todos-completed p {
+  margin-top: 6px;
+  text-align: center;
+}
+div.todos-list-wrapper__all-todos-completed p {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+div.todos-list-wrapper__all-todos-completed {
+  color: $sea-green;
+  font-weight: 500;
+}

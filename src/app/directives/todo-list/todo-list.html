@@ -1,0 +1,13 @@
+<div class="todos-list-wrapper">
+  <div class="todos-list-wrapper__todos" ng-if="todos.length > 0">
+    <h3>Completed to-dos</h3>
+    <ul>
+      <li ng-repeat="todo in todos track by $index">
+        <p>{{ $index + 1 }}. {{ todo.item }} <i class="fa fa-check" aria-hidden="true"></i></p>
+      </li>
+    </ul>
+  </div>
+  <div class="todos-list-wrapper__all-todos-completed" ng-if="todos.length === 6">
+    <p>Congrats, you completed all your to-dos!</p>
+  </div>
+</div>
