@@ -4,7 +4,7 @@
     .module('circleProgress')
     .directive('circleProgressDirective', circleProgressDirective);
 
-  function circleProgressDirective (todoService, $timeout) {
+  function circleProgressDirective (circleProgressService, todoService, $timeout) {
     return {
       restrict: 'E',
       replace: true,
@@ -30,9 +30,9 @@
         }
       };
 
-      todoService.setCircleOptions(defaultCircleOptions);
+      circleProgressService.setCircleOptions(defaultCircleOptions);
       
-      let circleOptions = todoService.getCircleOptions();
+      let circleOptions = circleProgressService.getCircleOptions();
 
        /**
         * needs to be asynchronous so jquery-circle-progress has time to initialize when initial circle value is > 0
@@ -46,7 +46,7 @@
       scope.$watchGroup(['todo.active', 'todo.item'], () => {
         if (scope.todo) {
           todoService.toggleTodo(scope.todo);
-          todoService.updateProgressCircle();
+          circleProgressService.updateProgressCircle();
         }
       });
       scope.$watch('resetTodos', (newValue, oldValue) => {
@@ -55,7 +55,7 @@
         }
 
         todoService.resetCompletedTodos(); 
-        todoService.updateProgressCircle(); 
+        circleProgressService.updateProgressCircle(); 
       });
     }
   }

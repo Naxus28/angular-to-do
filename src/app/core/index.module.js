@@ -21,6 +21,6 @@
     /**
      * services
      */
-    'sharedServices'
+    'services'
   ]);
 })();
