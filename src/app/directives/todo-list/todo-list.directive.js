@@ -5,7 +5,7 @@
     .directive('todoListDirective', todoListDirective);
 
   /* @nginject */
-  function todoListDirective (todosProgressService) {
+  function todoListDirective (todoService) {
     return {
       restrict: 'E',
       replace: true,
@@ -15,7 +15,7 @@
     };
 
     function link(scope) {
-      scope.completedTodos = todosProgressService.getCompletedTodos();
+      scope.completedTodos = todoService.getCompletedTodos();
     }
   }
 })();

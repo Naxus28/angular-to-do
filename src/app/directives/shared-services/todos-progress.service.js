@@ -2,10 +2,9 @@
   'use strict';
   angular
     .module('directivesSharedServices')
-    .factory('todosProgressService', todosProgressService);
+    .factory('todoService', todoService);
 
-  /* @ngInject */
-  function todosProgressService() {
+  function todoService() {
     let _completedTodos = []; // holds todos state
     let _circleOptions = {}; // holds circle options state
 
@@ -21,9 +20,8 @@
     
     let getCompletedTodos = () => _completedTodos;
 
-    let resetCompletedTodos = () => {
-      _completedTodos = [];
-    };
+    let resetCompletedTodos = () => _completedTodos.length = 0;
+    
 
     /**
      * progress circle methods

@@ -5,7 +5,7 @@
     .module('home')
     .controller('HomeCtrl', HomeCtrl);
 
-  function HomeCtrl($log, todoService, todosProgressService) {
+  function HomeCtrl($log, homeService, todoService) {
     let vm = this;
     let circleOptions = {
       size: 190,
@@ -15,17 +15,18 @@
       }
     };
 
-    todosProgressService.setCircleOptions(circleOptions);
+    todoService.setCircleOptions(circleOptions);
 
-    vm.circleOptions = todosProgressService.getCircleOptions();
+    vm.circleOptions = todoService.getCircleOptions();
+    
     vm.fetchTodos = fetchTodos;
 
     function fetchTodos() {
-      todoService.getTodos()
+      homeService.getTodos()
       .then(
         response => {
           if (response.data.todos.length) {
-            vm.todos = todoService.getSixRandomTodos(response.data.todos);
+            vm.todos = homeService.getSixRandomTodos(response.data.todos);
           } else {
             vm.noTodosMsg = 'There are no to-dos for today!';
           }

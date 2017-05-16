@@ -2,9 +2,9 @@
   'use strict';
   angular
     .module('home')
-    .factory('todoService', todoService);
+    .factory('homeService', homeService);
 
-  function todoService($http) {
+  function homeService($http) {
     /**
      * initialize progress circle options
      */
