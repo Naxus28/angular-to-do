@@ -49,6 +49,8 @@ Gulp is configured to build a ".tmp" directory and serve files from "/src", "/.t
 $ gulp serve
 ```
 
+__Note__: because gulp is setup to serve for development only there are no annotations on dependencies injected into controllers, directives, and services. This works fine because gulp is not minifying/uglifying code. However, if minification/uglification are implemented, (say for a production server), either functions need to be annotated or [gulp-ng-annotate](https://www.npmjs.com/package/gulp-ng-annotate) needs to be piped into the gulp tasks.
+
 ## Built With
 
 [node and npm](https://nodejs.org/en/) - Package (dependencies) management
