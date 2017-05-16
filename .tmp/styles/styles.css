@@ -142,11 +142,15 @@ footer p {
   text-align: center;
   padding: 5px; }
 
+div.circle-progress-wrapper,
+div.circle-progress-wrapper__circle,
+div.circle-progress-wrapper__circle canvas {
+  display: inline-block; }
+
 div.circle-progress-wrapper__circle {
   margin-top: 30px; }
 
 div.circle-progress-wrapper__circle canvas {
-  display: block;
   margin: 0 auto; }
 
 div.todos-list-wrapper__todos li,
@@ -162,6 +166,11 @@ div.todos-list-wrapper__all-todos-completed p {
 div.todos-list-wrapper__all-todos-completed {
   color: #29704D;
   font-weight: 500; }
+
+div.to-dos-wrapper__progress-circle div.circle-progress-wrapper,
+div.to-dos-wrapper__progress-circle div.circle-progress-wrapper__circle,
+div.to-dos-wrapper__progress-circle div.circle-progress-wrapper__circle canvas {
+  display: block; }
 
 div.to-dos-wrapper {
   display: -webkit-box;

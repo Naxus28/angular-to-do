@@ -8,7 +8,6 @@
   function HomeCtrl($log, todoService, todosProgressService) {
     let vm = this;
     let circleOptions = {
-      value: 0,
       size: 190,
       thickness: 30,
       fill: {
@@ -19,7 +18,6 @@
     todosProgressService.setCircleOptions(circleOptions);
 
     vm.circleOptions = todosProgressService.getCircleOptions();
-
     vm.fetchTodos = fetchTodos;
 
     function fetchTodos() {

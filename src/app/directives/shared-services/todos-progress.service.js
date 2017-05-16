@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   angular
-    .module('todosProgress')
+    .module('directivesSharedServices')
     .factory('todosProgressService', todosProgressService);
 
   /* @ngInject */
@@ -21,7 +21,9 @@
     
     let getCompletedTodos = () => _completedTodos;
 
-    let resetCompletedTodos = () =>_completedTodos = [];
+    let resetCompletedTodos = () => {
+      _completedTodos = [];
+    };
 
     /**
      * progress circle methods

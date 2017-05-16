@@ -1,7 +1,11 @@
+div.circle-progress-wrapper,
+div.circle-progress-wrapper__circle,
+div.circle-progress-wrapper__circle canvas {
+  display: inline-block;
+}
 div.circle-progress-wrapper__circle {
   margin-top: 30px;
 }
 div.circle-progress-wrapper__circle canvas{
-  display: block;
   margin: 0 auto;
 }

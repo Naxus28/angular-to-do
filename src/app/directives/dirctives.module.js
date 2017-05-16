@@ -2,7 +2,8 @@
   'use strict';
   
   angular.module('directives', [
-    'todosProgress',
-    'todoList'
+    'circleProgress',
+    'todoList',
+    'directivesSharedServices'
   ]);
 })();

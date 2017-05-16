@@ -12,3 +12,12 @@ div.todos-list-wrapper__all-todos-completed {
   color: $sea-green;
   font-weight: 500;
 }
+div.to-dos-wrapper__progress-circle {
+  div.circle-progress-wrapper,
+  div.circle-progress-wrapper__circle,
+  div.circle-progress-wrapper__circle canvas {
+    display: block;
+  }
+}
+
+

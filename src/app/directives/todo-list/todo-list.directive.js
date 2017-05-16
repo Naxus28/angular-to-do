@@ -15,9 +15,7 @@
     };
 
     function link(scope) {
-      scope.todos = todosProgressService.getCompletedTodos();
-
-      console.log(todosProgressService.getCompletedTodos());
+      scope.completedTodos = todosProgressService.getCompletedTodos();
     }
   }
 })();

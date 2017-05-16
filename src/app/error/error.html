@@ -1,7 +1,13 @@
 <div class="error-wrapper">
   <h2>Oops... this page doesn't exist</h2>
   <div class="error-wrapper__404">
-    <span>4</span><span class="error_circle"></span><span>4</span>
+    <span>4</span>    
+    <circle-progress-directive value="{{ error.circleOptions.value }}"
+                               size="{{ error.circleOptions.size }}" 
+                               thickness="{{ error.circleOptions.thickness }}"
+                               gradient="error.circleOptions.fill.gradient">
+    </circle-progress-directive>
+    <span>4</span>
   </div>
   <div class="error-wrapper__back-to-home">
     <p class="h2">
