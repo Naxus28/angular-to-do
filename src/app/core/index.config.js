@@ -5,10 +5,9 @@
     .module('todoApp')
     .config(config);
 
-  function config($logProvider, $locationProvider, $qProvider) {
+  function config($logProvider, $locationProvider) {
     $logProvider.debugEnabled(true);
     $locationProvider.html5Mode(true);
-    $qProvider.errorOnUnhandledRejections(false);
   }
 })();
 
