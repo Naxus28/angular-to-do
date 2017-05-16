@@ -1,4 +1,5 @@
 /* names generated at http://chir.ag/projects/name-that-color/#E7FCFC */
+/*anti aliasing*/
 /* 
  * ERIC MAYER'S RESET
  * http://meyerweb.com/eric/tools/css/reset/ 
@@ -52,7 +53,6 @@ table {
 .fa.fa-check {
   color: #7EAEB0; }
 
-/*anti aliasing*/
 /*base styles*/
 * {
   -webkit-box-sizing: border-box;

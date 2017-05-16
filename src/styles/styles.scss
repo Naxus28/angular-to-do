@@ -1,8 +1,7 @@
 @import 'modules/colors';
+@import 'helpers/mixins';
 @import 'partials/reset';
 @import 'partials/typography';
-@import 'partials/variables';
-@import 'helpers/mixins';
 @import 'partials/base';
 @import 'directives/circle-progress';
 @import 'directives/todos-list';
