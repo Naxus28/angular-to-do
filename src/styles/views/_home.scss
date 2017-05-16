@@ -20,11 +20,37 @@ li.to-dos-wrapper__list-item {
   margin-bottom: 10px;
   border-radius: 5px;
   color: white;
+  border: 1px solid $fiord;
+  transition: background .3s ease;
+  &:hover {
+    background: $shuttle-gray;
+  }
+}
+li.to-dos-wrapper__list-item--active {
+  background: $shuttle-gray;
 }
 li.to-dos-wrapper__list-item p {
   font-size: 1.3em;
   font-weight: 500;
 }
+i.to-dos-wrapper__list-item-checkbox {
+  opacity: 0;
+  float: right;
+  margin-right: 30px;
+  margin-left: 40px;
+  font-size: 1.2em;
+  color: white!important;
+  transition: opacity .2s ease;
+}
+i.to-dos-wrapper__list-item-checkbox--active {
+  opacity: 1;
+}
+input.to-dos-wrapper__list-item-checkbox {
+  margin-right: 20px;
+}
 div.to-dos-wrapper__no-todos p {
   text-align: center;
 }
+
+
+
