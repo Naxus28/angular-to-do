@@ -7,7 +7,7 @@
       </p>
       <ul class="to-dos-wrapper__list">
         <li class="to-dos-wrapper__list-item" 
-            ng-repeat="todo in home.todos track by $index"
+            ng-repeat="todo in home.todos"
             ng-click="home.todoItem = todo; todo.active = !todo.active;"
             ng-model="home.todoItem">
           <p>
