@@ -41,16 +41,21 @@
       $timeout(setCircle, 0);
 
       /**
-       * optional watch if we need to trigger behavior and update the directive's inner state based on parent's scope 
+       * these "watches" trigger behavior on the directive and update the its inner state based on parent's scope 
        */
-      scope.$watchGroup(['todo.active', 'todo.item'], () => scope.todo && todoService.updateTodosAndSetView(scope.todo));
+      scope.$watchGroup(['todo.active', 'todo.item'], () => {
+        if (scope.todo) {
+          todoService.toggleTodo(scope.todo);
+          todoService.updateProgressCircle();
+        }
+      });
       scope.$watch('resetTodos', (newValue, oldValue) => {
         if (newValue === oldValue) {
           return;
         }
 
         todoService.resetCompletedTodos(); 
-        todoService.setProgressCircleView(); 
+        todoService.updateProgressCircle(); 
       });
     }
   }

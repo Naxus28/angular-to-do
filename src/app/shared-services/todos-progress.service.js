@@ -11,7 +11,7 @@
     /**
      * todos methods
      */
-    let addCompletedTodo = (todo) => _completedTodos.push(todo);
+    let addTodo = (todo) => _completedTodos.push(todo);
 
     let deleteTodo = (todo) => {
       let todoIndex = _completedTodos.indexOf(todo);
@@ -21,6 +21,14 @@
     let getCompletedTodos = () => _completedTodos;
 
     let resetCompletedTodos = () => _completedTodos.length = 0;
+
+    let toggleTodo = (todo) => {
+      if (!_completedTodos.includes(todo)) {
+        addTodo(todo);
+      } else {
+        deleteTodo(todo);
+      }
+    };
 
     /**
      * progress circle methods
@@ -41,29 +49,20 @@
     /**
      * DOM methods
      */
-    let setProgressCircleView = () => {
+    let updateProgressCircle = () => {
       let progress = getUpdatedCircleValue();
       $('#circle').circleProgress('value', progress); //updates circle value
     };
 
-    
-    let updateTodosAndSetView = (todo) => {
-      if (!_completedTodos.includes(todo)) {
-        addCompletedTodo(todo);
-      } else {
-        deleteTodo(todo);
-      }
-      
-      setProgressCircleView();
-    };
+   
 
     const service = { 
       getCircleOptions,
       getCompletedTodos,
       resetCompletedTodos,
       setCircleOptions,
-      setProgressCircleView,
-      updateTodosAndSetView
+      updateProgressCircle,
+      toggleTodo
     };
 
     return service; // expose API
