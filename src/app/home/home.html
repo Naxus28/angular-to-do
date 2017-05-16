@@ -12,11 +12,7 @@
             ng-click="home.todoItem = todo; todo.active = !todo.active;"
             ng-model="home.todoItem">
           <p>
-            <input type="checkbox" 
-                   class="to-dos-wrapper__list-item-checkbox"
-                   ng-model="todo.active" 
-                   ng-click="$event.stopPropagation(); home.todoItem = todo;"/> 
-                   {{ todo.item }}
+            <span class="to-dos-wrapper__list-item-todo">{{ todo.item }}</span>
             <i class="fa fa-check to-dos-wrapper__list-item-checkbox" 
                ng-class="todo.active ? 'to-dos-wrapper__list-item-checkbox--active' : ''" 
                aria-hidden="true"></i>

@@ -15,9 +15,10 @@ div.to-dos-wrapper__to-dos-block > p{
   margin-bottom: 15px;
 }
 li.to-dos-wrapper__list-item {
+  width: 80%;
   background: $bali-hai;
   padding: 20px;
-  margin-bottom: 10px;
+  margin: 0 auto 12px;
   border-radius: 5px;
   color: white;
   border: 1px solid $fiord;
@@ -32,15 +33,20 @@ li.to-dos-wrapper__list-item--active {
 li.to-dos-wrapper__list-item p {
   font-size: 1.3em;
   font-weight: 500;
+  display: flex;
+}
+span.to-dos-wrapper__list-item-todo {
+  flex: auto;
 }
 i.to-dos-wrapper__list-item-checkbox {
   opacity: 0;
-  float: right;
+  display: inline-block;
+  text-align: right;
   margin-right: 30px;
-  margin-left: 40px;
   font-size: 1.2em;
   color: white!important;
   transition: opacity .2s ease;
+  flex: auto;
 }
 i.to-dos-wrapper__list-item-checkbox--active {
   opacity: 1;
@@ -50,6 +56,13 @@ input.to-dos-wrapper__list-item-checkbox {
 }
 div.to-dos-wrapper__no-todos p {
   text-align: center;
+}
+
+@media screen and (max-width: 680px) {
+  div.to-dos-wrapper__to-dos,,
+  div.to-dos-wrapper__progress-circle {
+    flex: 100%;
+  }
 }
 
 
