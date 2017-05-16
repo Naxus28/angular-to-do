@@ -28,7 +28,6 @@ gulp.task('clean-temp', () => {
   return del.sync(dir);
 });
 
-
 /*
  * copy-index-html
  */
@@ -36,6 +35,7 @@ gulp.task('copy-index-html', () => {
   return gulp.src('src/index.html')
     .pipe(gulp.dest(config.dirPaths.temp));
 });
+
 /*
  * sass
  */
@@ -119,7 +119,5 @@ let browserSyncInit = (servers) => {
 };
 
 gulp.task('serve', ['build', 'watch'], () => browserSyncInit(devServers)); 
-
-
 
 
