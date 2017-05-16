@@ -1,6 +1,6 @@
 # Angular to-do app
 
-Angular v1.6 todo app with [jquery-circle-progress](https://github.com/kottenator/jquery-circle-progress) integration. 
+To-do app build with Angular v1.6. This app also implements [jquery-circle-progress](https://github.com/kottenator/jquery-circle-progress) to display to-dos percentage completion. 
 
 ## Getting Started
 
