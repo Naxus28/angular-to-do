@@ -4,7 +4,6 @@
     .module('todoList')
     .directive('todoListDirective', todoListDirective);
 
-  /* @nginject */
   function todoListDirective (todoService) {
     return {
       restrict: 'E',

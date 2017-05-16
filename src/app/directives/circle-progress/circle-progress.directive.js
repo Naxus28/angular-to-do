@@ -35,23 +35,22 @@
       let circleOptions = todoService.getCircleOptions();
 
        /**
-        * needs to be asynchronous so jquery-circle-progress has time to initialize 
-        * in case we want the circle to initialize with value > 0
+        * needs to be asynchronous so jquery-circle-progress has time to initialize when initial circle value is > 0
         */
       let setCircle = () => $('#circle').circleProgress(circleOptions);
       $timeout(setCircle, 0);
 
       /**
-       * watch parent scope and update the directive's template with new values
+       * optional watch if we need to trigger behavior and update the directive's inner state based on parent's scope 
        */
-      scope.$watchGroup(['todo.active', 'todo.item'], () => scope.todo && todoService.updateTodosAndSetView(scope));
+      scope.$watchGroup(['todo.active', 'todo.item'], () => scope.todo && todoService.updateTodosAndSetView(scope.todo));
       scope.$watch('resetTodos', (newValue, oldValue) => {
         if (newValue === oldValue) {
           return;
         }
 
         todoService.resetCompletedTodos(); 
-        todoService.setView(scope); 
+        todoService.setProgressCircleView(); 
       });
     }
   }

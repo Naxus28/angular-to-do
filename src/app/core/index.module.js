@@ -16,6 +16,11 @@
     /**
      * directives
      */
-    'directives'
+    'directives',
+
+    /**
+     * services
+     */
+    'sharedServices'
   ]);
 })();

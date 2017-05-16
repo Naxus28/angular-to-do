@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   angular
-    .module('directivesSharedServices')
+    .module('sharedServices')
     .factory('todoService', todoService);
 
   function todoService() {
@@ -21,7 +21,6 @@
     let getCompletedTodos = () => _completedTodos;
 
     let resetCompletedTodos = () => _completedTodos.length = 0;
-    
 
     /**
      * progress circle methods
@@ -42,26 +41,20 @@
     /**
      * DOM methods
      */
-    let setTodoListView = (scope) => scope.completedTodos = _completedTodos;
-
     let setProgressCircleView = () => {
       let progress = getUpdatedCircleValue();
       $('#circle').circleProgress('value', progress); //updates circle value
     };
+
     
-    let setView = (scope) => {
-      setTodoListView(scope); 
-      setProgressCircleView();
-    };
-    
-    let updateTodosAndSetView = (scope) => {
-      if (!_completedTodos.includes(scope.todo)) {
-        addCompletedTodo(scope.todo);
+    let updateTodosAndSetView = (todo) => {
+      if (!_completedTodos.includes(todo)) {
+        addCompletedTodo(todo);
       } else {
-        deleteTodo(scope.todo);
+        deleteTodo(todo);
       }
       
-      setView(scope);
+      setProgressCircleView();
     };
 
     const service = { 
@@ -69,7 +62,7 @@
       getCompletedTodos,
       resetCompletedTodos,
       setCircleOptions,
-      setView,
+      setProgressCircleView,
       updateTodosAndSetView
     };
 

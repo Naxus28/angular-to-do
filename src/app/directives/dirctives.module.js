@@ -3,7 +3,6 @@
   
   angular.module('directives', [
     'circleProgress',
-    'todoList',
-    'directivesSharedServices'
+    'todoList'
   ]);
 })();
