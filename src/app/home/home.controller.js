@@ -26,7 +26,6 @@
       .then(
         response => {
           if (response.data.todos.length) {
-            console.log(response);
             vm.todos = homeService.getSixRandomTodos(response.data.todos);
           } else {
             vm.noTodosMsg = 'There are no to-dos for today!';
