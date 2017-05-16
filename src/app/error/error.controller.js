@@ -5,7 +5,7 @@
     .module('error')
     .controller('ErrorCtrl', ErrorCtrl);
 
-  function ErrorCtrl(todosProgressService) {
+  function ErrorCtrl(todoService) {
     let vm = this;
     let circleOptions = {
       value: 1,
@@ -16,7 +16,7 @@
       }
     };
 
-    todosProgressService.setCircleOptions(circleOptions);
-    vm.circleOptions = todosProgressService.getCircleOptions();
+    todoService.setCircleOptions(circleOptions);
+    vm.circleOptions = todoService.getCircleOptions();
   }
 })();
