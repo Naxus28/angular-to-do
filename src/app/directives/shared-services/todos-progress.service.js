@@ -28,7 +28,7 @@
      */
     let getCircleOptions = () => _circleOptions;
     
-    let getupdatedCircleValue = () => {
+    let getUpdatedCircleValue = () => {
       let completedTodos = getCompletedTodos();
       let progress = completedTodos.length === 6 ? 1 : completedTodos.length / 6;
 
@@ -45,7 +45,7 @@
     let setTodoListView = (scope) => scope.completedTodos = _completedTodos;
 
     let setProgressCircleView = () => {
-      let progress = getupdatedCircleValue();
+      let progress = getUpdatedCircleValue();
       $('#circle').circleProgress('value', progress); //updates circle value
     };
     
@@ -69,8 +69,6 @@
       getCompletedTodos,
       resetCompletedTodos,
       setCircleOptions,
-      setTodoListView,
-      setProgressCircleView,
       setView,
       updateTodosAndSetView
     };
