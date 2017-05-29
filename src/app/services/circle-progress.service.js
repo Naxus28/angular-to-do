@@ -5,10 +5,10 @@
     .factory('circleProgressService', circleProgressService);
 
   function circleProgressService(todoService) {
-    let _circleOptions = {}; // holds circle options state
-
-    let getCircleOptions = () => _circleOptions;
     
+    /**
+     * @return todos progress
+     */
     let getUpdatedCircleValue = () => {
       let completedTodos = todoService.getTodos();
       let progress = completedTodos.length === 6 ? 1 : completedTodos.length / 6;
@@ -16,18 +16,28 @@
       return progress;
     };
 
-    let setCircleOptions = (optionsObj) => {
-      _circleOptions = _.cloneDeep(optionsObj);
-    };
+    /**
+     * sets initial circle config options
+     * @param  circleOptions
+     * @return void
+     */
+    let setInitialCircleOptions = (circleOptions) => $('#circle').circleProgress(circleOptions);
 
+    /**
+     * updates circle progress value
+     * @return void
+     */
     let updateProgressCircle = () => {
       let progress = getUpdatedCircleValue();
       $('#circle').circleProgress('value', progress); //updates circle value
     };
    
+
+   /**
+    * services to be exposed
+    */
     const service = { 
-      getCircleOptions,
-      setCircleOptions,
+      setInitialCircleOptions,
       updateProgressCircle
     };
 

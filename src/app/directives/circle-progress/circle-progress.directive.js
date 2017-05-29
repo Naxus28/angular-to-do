@@ -21,7 +21,7 @@
     };
     
     function link(scope) {
-      let defaultCircleOptions = {
+      let circleOptions = {
         value: scope.value || 0,
         size: scope.size,
         thickness: scope.thickness,
@@ -30,18 +30,10 @@
         }
       };
 
-      circleProgressService.setCircleOptions(defaultCircleOptions);
-      
-      let circleOptions = circleProgressService.getCircleOptions();
-
-       /**
-        * needs to be asynchronous so jquery-circle-progress has time to initialize when initial circle value is > 0
-        */
-      let setCircle = () => $('#circle').circleProgress(circleOptions);
-      $timeout(setCircle, 0);
+      circleProgressService.setInitialCircleOptions(circleOptions);
 
       /**
-       * these "watches" trigger behavior on the directive and update the its inner state based on parent's scope 
+       * these "watches" trigger behavior on the directive and update its inner state based on parent's scope 
        */
       scope.$watchGroup(['todo.active', 'todo.item'], () => {
         if (scope.todo) {

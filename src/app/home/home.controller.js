@@ -5,9 +5,9 @@
     .module('home')
     .controller('HomeCtrl', HomeCtrl);
 
-  function HomeCtrl($log, homeService, circleProgressService) {
+  function HomeCtrl($log, homeService) {
     let vm = this;
-    let circleOptions = {
+    vm.circleOptions = {
       size: 190,
       thickness: 30,
       fill: {
@@ -15,10 +15,6 @@
       }
     };
 
-    circleProgressService.setCircleOptions(circleOptions);
-
-    vm.circleOptions = circleProgressService.getCircleOptions();
-    
     vm.fetchTodos = fetchTodos;
 
     function fetchTodos() {

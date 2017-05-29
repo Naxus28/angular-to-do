@@ -5,9 +5,9 @@
     .module('error')
     .controller('ErrorCtrl', ErrorCtrl);
 
-  function ErrorCtrl(circleProgressService) {
+  function ErrorCtrl() {
     let vm = this;
-    let circleOptions = {
+    vm.circleOptions = {
       value: 1,
       size: 145,
       thickness: 10,
@@ -15,8 +15,5 @@
         gradient: ['#008CBA', '#D4B193', '#E7FCFC', '#29704D']
       }
     };
-
-    circleProgressService.setCircleOptions(circleOptions);
-    vm.circleOptions = circleProgressService.getCircleOptions();
   }
 })();
