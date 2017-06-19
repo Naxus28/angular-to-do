@@ -17,12 +17,12 @@
           if (response.data.todos.length) {
             vm.todos = response.data.todos;
           } else {
-            vm.noTodosMsg = 'There are no to-dos for today!';
+            // handle empty response
           }
         },
         err => {
           $log.error('Error: ', err);
-          vm.error = 'There was an error loading the application. Please try again later. We apologize for any inconvenience.';
+          // handle error
         }
       );
     }
