@@ -250,6 +250,11 @@ div.to-dos-wrapper__no-todos p {
     -ms-flex: 100%;
     flex: 100%; } }
 
+p.to-dos-wrapper__to-do-item span {
+  cursor: pointer; }
+  p.to-dos-wrapper__to-do-item span:hover {
+    text-decoration: underline; }
+
 div.error-wrapper {
   margin-top: 80px; }
 

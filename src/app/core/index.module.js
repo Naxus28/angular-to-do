@@ -11,6 +11,7 @@
      * main modules
      */
     'home',
+    'simpleList',
     'error',
 
     /**

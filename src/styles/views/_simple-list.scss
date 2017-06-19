@@ -1,0 +1,9 @@
+p.to-dos-wrapper__to-do-item {
+    span {
+      cursor: pointer;
+
+      &:hover {
+      text-decoration: underline;
+    }
+  }
+}

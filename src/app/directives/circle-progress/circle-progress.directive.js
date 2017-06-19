@@ -4,7 +4,7 @@
     .module('circleProgress')
     .directive('circleProgressDirective', circleProgressDirective);
 
-  function circleProgressDirective (circleProgressService, todoService, $timeout) {
+  function circleProgressDirective (circleProgressService, todoService) {
     return {
       restrict: 'E',
       replace: true,
